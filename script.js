@@ -25,6 +25,9 @@ class Level1 extends Phaser.Scene {
             .setCircle(10)
             .setStatic(true);
 
+        this.ball = this.matter.add.gameObject(this.add.ellipse(400, 750, 15, 15, 0xFAFAFA))
+            .setCircle(7.5)
+
     }
 }
 
