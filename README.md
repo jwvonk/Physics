@@ -1,7 +1,7 @@
 # Physics
 CMPM 120 D3
 
-Play the game [here]()
+Play the game [here](https://jwvonk.github.io/Physics/)
 
 Code requirements:
 - **Continuous Input**: The time at wich the player clicks determines launch direction
