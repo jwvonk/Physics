@@ -29,9 +29,20 @@ class Level1 extends Phaser.Scene {
             .setCircle(7.5)
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
-            this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
-            this.container = this.add.container(400, 750, [this.reticle, this.path]);
+        this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
+        this.container = this.add.container(400, 750, [this.reticle, this.path]);
 
+        this.timerEvent = this.time.addEvent({delay: 3000, repeat: -1});
+
+    }
+
+    update() {
+        let progress = this.timerEvent.getProgress();
+        if (progress < .5) {
+            this.container.setAngle(360 * progress - 90);
+        } else {
+            this.container.setAngle(270 - 360 * progress);
+        }
     }
 }
 
