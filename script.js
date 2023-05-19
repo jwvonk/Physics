@@ -94,7 +94,7 @@ let config = {
             },
         }
     },
-    scene: [Level1],
+    scene: [Level1, Score1],
 }
 
 let game = new Phaser.Game(config);
