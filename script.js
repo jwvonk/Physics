@@ -27,6 +27,9 @@ class Level1 extends Phaser.Scene {
 
         this.ball = this.matter.add.gameObject(this.add.ellipse(400, 750, 15, 15, 0xFAFAFA))
             .setCircle(7.5)
+            .setCircle(7.5)
+            .setBounce(1)
+            .setFriction(0, .005, 0)
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
