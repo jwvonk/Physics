@@ -34,6 +34,13 @@ class Level1 extends Phaser.Scene {
 
         this.timerEvent = this.time.addEvent({delay: 3000, repeat: -1});
 
+        this.input.once('pointerdown', () => {
+            this.ball.setVelocity(
+                15 * Math.sin(this.container.angle * Math.PI / 180), 
+                -15 * Math.cos(this.container.angle * Math.PI / 180))
+            this.container.destroy();
+        })
+
     }
 
     update() {
