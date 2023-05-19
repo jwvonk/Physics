@@ -53,6 +53,12 @@ class Level1 extends Phaser.Scene {
         } else {
             this.container.setAngle(270 - 360 * progress);
         }
+
+        let x = this.ball.getVelocity().x;
+        let y = this.ball.getVelocity().y;
+        if (x != 0 && y != 0 && Math.abs(x) < .1 && Math.abs(y) < .1) {
+            this.scene.start('level1');
+        }
     }
 }
 
