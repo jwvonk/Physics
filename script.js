@@ -30,6 +30,7 @@ class Level1 extends Phaser.Scene {
             .setCircle(7.5)
             .setBounce(1)
             .setFriction(0, .005, 0)
+            .setOnCollideWith(this.hole, () => this.scene.start('level1'));
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
