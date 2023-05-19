@@ -13,6 +13,14 @@ class Level1 extends Phaser.Scene {
             .setStatic(true);
         this.matter.add.gameObject(this.add.rectangle(10, 790, 1600, 20, 0x4a1204))
             .setStatic(true);
+        
+        this.matter.add.gameObject(this.add.rectangle(368, 350, 100, 10, 0xd4c36e))
+            .setStatic(true)
+            .setAngle(-45);
+        this.matter.add.gameObject(this.add.rectangle(432, 350, 100, 10, 0xd4c36e))
+            .setStatic(true)
+            .setAngle(45);
+
     }
 }
 
