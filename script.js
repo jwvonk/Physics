@@ -14,7 +14,7 @@ class Level1 extends Phaser.Scene {
             .setStatic(true);
         this.matter.add.gameObject(this.add.rectangle(10, 790, 1600, 20, 0x4a1204))
             .setStatic(true);
-        
+
         this.matter.add.gameObject(this.add.rectangle(368, 350, 100, 10, 0xd4c36e))
             .setStatic(true)
             .setAngle(-45);
@@ -31,17 +31,17 @@ class Level1 extends Phaser.Scene {
             .setCircle(7.5)
             .setBounce(1)
             .setFriction(0, .005, 0)
-            .setOnCollideWith(this.hole, () => this.scene.start('score1', {score: this.startCount }));
+            .setOnCollideWith(this.hole, () => this.scene.start('score1', { score: this.startCount }));
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
         this.container = this.add.container(400, 750, [this.reticle, this.path]);
 
-        this.timerEvent = this.time.addEvent({delay: 3000, repeat: -1});
+        this.timerEvent = this.time.addEvent({ delay: 3000, repeat: -1 });
 
         this.input.once('pointerdown', () => {
             this.ball.setVelocity(
-                15 * Math.sin(this.container.angle * Math.PI / 180), 
+                15 * Math.sin(this.container.angle * Math.PI / 180),
                 -15 * Math.cos(this.container.angle * Math.PI / 180))
             this.container.destroy();
         })
@@ -118,18 +118,18 @@ class Level2 extends Phaser.Scene {
             .setCircle(7.5)
             .setBounce(1)
             .setFriction(0, .005, 0)
-            .setOnCollideWith(this.hole, () => this.scene.start('score2', {score: this.startCount }));
+            .setOnCollideWith(this.hole, () => this.scene.start('score2', { score: this.startCount }));
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
 
         this.container = this.add.container(400, 750, [this.reticle, this.path]);
 
-        this.timerEvent = this.time.addEvent({delay: 3000, repeat: -1});
+        this.timerEvent = this.time.addEvent({ delay: 3000, repeat: -1 });
 
         this.input.once('pointerdown', () => {
             this.ball.setVelocity(
-                15 * Math.sin(this.container.angle * Math.PI / 180), 
+                15 * Math.sin(this.container.angle * Math.PI / 180),
                 -15 * Math.cos(this.container.angle * Math.PI / 180))
             this.container.destroy();
 
@@ -209,18 +209,18 @@ class Level3 extends Phaser.Scene {
             .setCircle(7.5)
             .setBounce(1)
             .setFriction(0, .005, 0)
-            .setOnCollideWith(this.hole, () => this.scene.start('score2', {score: this.startCount }));
+            .setOnCollideWith(this.hole, () => this.scene.start('score2', { score: this.startCount }));
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
 
         this.container = this.add.container(400, 750, [this.reticle, this.path]);
 
-        this.timerEvent = this.time.addEvent({delay: 3000, repeat: -1});
+        this.timerEvent = this.time.addEvent({ delay: 3000, repeat: -1 });
 
         this.input.once('pointerdown', () => {
             this.ball.setVelocity(
-                15 * Math.sin(this.container.angle * Math.PI / 180), 
+                15 * Math.sin(this.container.angle * Math.PI / 180),
                 -15 * Math.cos(this.container.angle * Math.PI / 180))
             this.container.destroy();
         })
