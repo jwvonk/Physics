@@ -5,6 +5,7 @@ class Level1 extends Phaser.Scene {
     }
 
     create() {
+        this.startCount++;
         this.matter.add.gameObject(this.add.rectangle(10, 10, 20, 1600, 0x4a1204))
             .setStatic(true);
         this.matter.add.gameObject(this.add.rectangle(10, 10, 1600, 20, 0x4a1204))
@@ -30,7 +31,7 @@ class Level1 extends Phaser.Scene {
             .setCircle(7.5)
             .setBounce(1)
             .setFriction(0, .005, 0)
-            .setOnCollideWith(this.hole, () => this.scene.start('level1'));
+            .setOnCollideWith(this.hole, () => this.scene.start('score1', {score: this.startCount }));
 
         this.reticle = this.add.rectangle(0, -40, 5, 40, 0xFAFAFA)
         this.path = this.add.rectangle(0, -1060, 5, 2000, 0x999999).setAlpha(.2)
@@ -60,6 +61,22 @@ class Level1 extends Phaser.Scene {
         if (x != 0 && y != 0 && Math.abs(x) < .1 && Math.abs(y) < .1) {
             this.scene.start('level1');
         }
+    }
+}
+
+class Score1 extends Phaser.Scene {
+    init(data) {
+        this.score = data.score;
+    }
+
+    constructor() {
+        super("score1")
+    }
+
+    create() {
+        this.add.text(50, 50, "Your score was: " + this.score + ".").setFontSize(50);
+        this.add.text(50, 100, "Click to proceed.").setFontSize(20);
+        this.input.on('pointerdown', () => this.scene.start('level1'));
     }
 }
 
