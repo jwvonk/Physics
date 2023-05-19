@@ -21,6 +21,10 @@ class Level1 extends Phaser.Scene {
             .setStatic(true)
             .setAngle(45);
 
+        this.hole = this.matter.add.gameObject(this.add.ellipse(400, 375, 20, 20, 0x101010))
+            .setCircle(10)
+            .setStatic(true);
+
     }
 }
 
